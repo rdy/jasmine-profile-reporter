@@ -32,38 +32,33 @@ function ProfileReporter(options) {
   }
 
   function reportSpecTiming() {
-    print('\n');
     print('10 slowest specs');
-    print('\n');
     print('spec time (seconds): full spec name');
-    print('\n');
 
     print(objectValues(records).sort(function(a, b) {
       return b[1] - a[1];
     }).slice(0, 10).map(function(record) {
       return '' + record[1] + ': ' + record[0].fullName;
     }).join('\n'));
-    print('\n');
   }
 
   function reportSuiteTiming() {
-    print('\n');
     print('10 slowest describes');
-    print('\n');
     print('suite time (seconds): full describe name');
-    print('\n');
 
     print(objectValues(suiteRecords).sort(function(a, b) {
       return b[1] - a[1];
     }).slice(0, 10).map(function(record) {
       return '' + record[1] + ': ' + record[0].fullName;
     }).join('\n'));
-    print('\n');
   }
 
   this.jasmineDone = function() {
+    print('');
     reportSpecTiming();
+    print('');
     reportSuiteTiming();
+    print('');
     onComplete();
   };
 
