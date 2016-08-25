@@ -1,6 +1,6 @@
 {
   "name": "jasmine-profile-reporter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "jasmine profile reporter",
   "main": "index.js",
   "scripts": {
@@ -48,6 +48,5 @@
     "webpack": "^1.13.1",
     "webpack-stream": "^3.2.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
